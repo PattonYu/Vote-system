@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>投票</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="../../vendors/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../build/css/admin-index.css">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="col-md-8 col-md-offset-2" >
+        <h1><strong>选手列表</strong></h1>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>选手姓名</th>
+            </tr>
+            </thead>
+            <tbody id="playerTableBody">
+            </tbody>
+        </table>
+        <button type="button" class="btn-info" onclick="submitData()">提交投票</button>
+    </div>
+</div>
+</body>
+<script src="../../vendors/jquery-3.3.1.min.js"></script>
+<script src="../../build/js/vote-view.js"></script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>评委管理</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="../../vendors/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../build/css/admin-index.css">
+</head>
+<body >
+<div class="container-fluid">
+    <div class="col-md-8 col-md-offset-2">
+        <h1>修改评委</h1>
+        <form id="updataUser">
+                <input type="text" class="form-control" name="newRealName" id="newPlayernameInput" placeholder="请输入你的真实姓名"><br>
+                <input type="password" class="form-control" name="newPassword1"  placeholder="请输入你的密码"><br>
+                <input type="password" class="form-control" name="newPassword2"  placeholder="请再次输入你的密码"><br>
+                <input type="text" class="form-control" name="newEmail" placeholder="请输入新邮箱"><br>
+            <button style="float: right;" type="button" class="btn btn-success" onclick="checkUserData()" >保存</button>
+        </form>
+    </div>
+</div>
+</body>
+<script src="../../vendors/jquery-3.3.1.min.js"></script>
+<script src="../../build/js/admin-index.js"></script>
+</html>

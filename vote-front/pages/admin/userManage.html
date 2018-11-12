@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户管理</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="../../vendors/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../build/css/admin-index.css">
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="col-md-8 col-md-offset-2">
+        <h1><strong>用户列表</strong></h1>
+        <table id="table" class="table table-bordered">
+            <tr>
+                <form id="addUser">
+                    <input type="text" name="username" id="usernameInput" placeholder="在此输入用户名">
+                    <input type="text" name="password" id="passwordInput" placeholder="在次输入密码">
+                    <input type="text" name="realname" id="realnameInput" placeholder="在此输入真实姓名">
+                    <input type="text" name="email" id="emaikInput" placeholder="在此输入邮箱">
+                    <button type="submit" class="btn btn-success" onclick="checkInfo()">添加</button>
+                </form>
+            </tr>
+        </table>
+
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>id</th>
+                <th>用户名</th>
+                <th>真实姓名</th>
+                <th>邮箱</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody id="userTableBody">
+            </tbody>
+
+        </table>
+    </div>
+</div>
+
+<script src="../../vendors/jquery-3.3.1.min.js"></script>
+<script src="../../build/js/admin-index.js"></script>
+</body>
+</html>

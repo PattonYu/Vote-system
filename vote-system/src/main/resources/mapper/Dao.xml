@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="demo.sicau.votesystem.dao.Dao">
+    <insert id="insertUser" parameterType="demo.sicau.votesystem.entity.PO.UserPO">
+        insert into user_t(id,username,password,real_name
+        <if test="userPO.email != null">,email
+        </if>)
+        values (#{userPO.id},#{userPO.username},#{userPO.password},#{userPO.realName}
+        <if test="userPO.email != null">
+            ,#{userPO.email}
+        </if>)
+
+        <!-- 如果email为空就执行下面的语句 -->
+        <!-- insert into user_t(id,username,password,real_name) values (#{userPO.id},#{userPO.username},#{userPO.password},#{userPO.realName}) -->
+
+        <!-- 如果email不为空就执行下面的语句 -->
+        <!-- insert into user_t(id,username,password,real_name,email) values (#{userPO.id},#{userPO.username},#{userPO.password},#{userPO.realName},#{userPO.email}) -->
+    </insert>
+    <insert id="insertPlayer">
+        insert into player_t(id,realName,profile) values (#{playerPO.id},#{playerPO.realName},#{playerPO.profile});
+    </insert>
+    <update id="updateUser" parameterType="demo.sicau.votesystem.entity.PO.UserPO">
+        update user_t set password = #{userPO.password},real_name = #{userPO.realName}
+        <if test="userPO.email != null">
+            ,email = #{userPO.email}
+        </if>
+        where id = #{userPO.id}
+    </update>
+    <update id="updatePlayer" parameterType="demo.sicau.votesystem.entity.PO.PlayerPO">
+        update player_t set realName = #{playerPO.realName},profile = #{playerPO.profile} where id = #{playerPO.id}
+    </update>
+    <update id="updateVoteById">
+        update player_t set votes = votes+1 where id = #{pid};
+    </update>
+
+    <delete id="deleteUserById">
+        delete from user_t where id = #{uid};
+    </delete>
+
+    <delete id="deletePlayerById">
+        delete from player_t where id = #{pid};
+    </delete>
+    <select id="selectUsers" resultType="demo.sicau.votesystem.entity.PO.UserPO">
+        select * from user_t;
+    </select>
+    <select id="selectUserByPwdAndUsername" resultType="demo.sicau.votesystem.entity.PO.UserPO">
+        select * from user_t where username = #{username} and password = #{password};
+    </select>
+    <select id="selectAdmins" resultType="demo.sicau.votesystem.entity.PO.UserPO">
+        select * from admin_t;
+    </select>
+    <select id="selectAdminByPwdAndUsername" resultType="demo.sicau.votesystem.entity.PO.UserPO">
+        select * from admin_t where username = #{username} and password = #{password};
+</select>
+    <select id="selectUserByPaging" resultType="demo.sicau.votesystem.entity.PO.UserPO">
+        select * from user_t limit #{index},#{limit};
+    </select>
+    <select id="selectUserCount" resultType="java.lang.Integer">
+        select count(id) from user_t;
+    </select>
+    <select id="selectUserById" resultType="demo.sicau.votesystem.entity.PO.UserPO">
+        select * from user_t where id = #{uid}
+    </select>
+    <select id="selectUserByUsername" resultType="demo.sicau.votesystem.entity.PO.UserPO">
+        select * from user_t where username = #{username};
+    </select>
+    <select id="selectPlayerCount" resultType="java.lang.Integer">
+        select count(id) from player_t;
+    </select>
+    <select id="selectPlayerByPaging" resultType="demo.sicau.votesystem.entity.PO.PlayerPO">
+        select * from player_t limit #{index},#{limit};
+    </select>
+    <select id="selectPlayerByRealName" resultType="demo.sicau.votesystem.entity.PO.PlayerPO">
+        select * from player_t where realName = #{realName};
+    </select>
+    <select id="selectPlayerById" resultType="demo.sicau.votesystem.entity.PO.PlayerPO">
+        select * from player_t where id = #{pid};
+    </select>
+</mapper>

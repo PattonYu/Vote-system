@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户管理</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="../../vendors/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../build/css/admin-index.css">
+</head>
+<body >
+<div class="container-fluid">
+    <div class="col-md-8 col-md-offset-2">
+        <h1>修改选手</h1>
+        <form id="updataPlayer">
+                <input type="text" class="form-control" name="newRealName" id="newPlayernameInput" placeholder="请输入选手名字">
+                <input type="text" class="form-control" name="newProfile" id="newProfile" placeholder="请输入选手详情">
+            <button style="float: right;" type="button" class="btn btn-success" onclick="checkSavaData()" >保存</button>
+        </form>
+    </div>
+</div>
+</body>
+<script src="../../vendors/jquery-3.3.1.min.js"></script>
+<script src="../../build/js/admin-index.js"></script>
+</html>

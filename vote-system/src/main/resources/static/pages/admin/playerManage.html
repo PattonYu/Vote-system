@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选手管理</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="../../vendors/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../build/css/admin-index.css">
+</head>
+<style>
+    a{ text-decoration:none}
+</style>
+<body>
+
+<div class="container-fluid">
+    <div class="col-md-8 col-md-offset-2" >
+        <h1><strong>选手列表</strong></h1>
+        <table id="table" class="table table-bordered">
+            <tr>
+                <form id="addPlayer">
+                    <input type="text" name="playername" id="playernameInput" placeholder="在此输入选手姓名">
+                    <input type="text" name="profiles" id="realnameInput" placeholder="在此输入详情">
+                    <button type="submit" class="btn btn-success" onclick="checkInfo1()">添加</button>
+                </form>
+            </tr>
+        </table>
+
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>id</th>
+                <th>选手姓名</th>
+                <th>详情</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody id="playerTableBody">
+            </tbody>
+
+        </table>
+    </div>
+</div><center>
+<button><a href="index.html">返回首页</a></button> </center>
+<script src="../../vendors/jquery-3.3.1.min.js"></script>
+<script src="../../build/js/admin-index.js"></script>
+</body>
+</html>

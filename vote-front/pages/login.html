@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--设置媒体查询，禁止页面缩放-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>登录——在校投票系统</title>
+    <link rel="stylesheet" href="../vendors/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../build/css/login.css">
+</head>
+<body>
+
+<div class="container-fluid">
+
+    <div class="col-xs-12 col-md-4 col-md-offset-4 login-container">
+        <h1>川农在线投票系统</h1>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="usernameInput">用户名</label>
+                <input type="text" class="form-control" name="username" id="usernameInput" placeholder="请输入你的用户名">
+            </div>
+            <div class="form-group">
+                <label for="passwordInput">密码</label>
+                <input type="password" class="form-control" name="password" id="passwordInput" placeholder="请输入你的密码">
+            </div>
+                &nbsp;
+                管理员<input type="radio" name="role" id="lb1" value="0">&nbsp;&nbsp;
+                用户<input type="radio" name="role" id="lb2" value="1" checked>
+            <button style="float: right;" type="button" class="btn btn-success" onclick="checkForm()" >登录</button>
+        </form>
+    </div>
+
+
+</div>
+<script src="../vendors/jquery-3.3.1.min.js"></script>
+<script src="../build/js/login.js"></script>
+</body>
+</html>
