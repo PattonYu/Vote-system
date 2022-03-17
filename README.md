@@ -1,4 +1,4 @@
 # Vote-system
-code this in my second year in university
+I did this project when I in my second-year in Bechelor.
 
-actually its java Project
+It's a final homework of Java course.
